@@ -1,0 +1,20 @@
+%button
+  border-radius: 15px
+  width: auto
+  padding: 5px 15px
+  height: 30px
+  color: #fff
+  +transition(all 200ms ease-in-out)
+
+.button-blue
+  @extend %button
+  background-color: $blue-color
+  &:hover
+    background-color: $darken-blue-color
+    color: #fff
+
+.button-red
+  @extend %button
+  background-color: $red-color
+  &:hover
+    background-color: $darken-red-color
