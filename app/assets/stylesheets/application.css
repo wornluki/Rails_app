@@ -434,6 +434,12 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #FFF498; }
 
+ul {
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0; }
+
 html,
 body {
   min-height: 100vh; }
@@ -523,3 +529,41 @@ input, textarea {
   background-color: #D24D57; }
   .button-red:hover {
     background-color: #bc303a; }
+
+header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  background-color: #446CB3;
+  color: #fff; }
+
+ul.nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 960px;
+  margin: 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  ul.nav .panel {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  ul.nav li {
+    list-style: none;
+    padding: 20px; }
+
+a {
+  color: #fff; }
+  a:hover {
+    color: #fff; }
+
+p {
+  padding: 20px;
+  margin: 0; }

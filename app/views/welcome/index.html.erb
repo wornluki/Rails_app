@@ -1,10 +1,17 @@
-<ul>
-	<% unless user_signed_in? %>
-		<li><%= link_to("Zaloguj", new_user_session_path) %></li>
-		<li><%= link_to("Zarejestruj", new_user_registration_path) %></li>
-	<% else %>
-		Zalogowany jako <%= current_user.email %>
-		<li><%= link_to("Wyloguj", destroy_user_session_path, method: :delete) %></li>
-		<li><%= link_to("Dodaj ksiazke", "url") %></li>
-	<% end %>	
-</ul>
+<header>
+	<ul class="nav">
+		<p>BOOKSTORE.pl</p>
+		<% unless user_signed_in? %>
+			<div class="panel">
+				<li><%= link_to("Zaloguj", new_user_session_path) %></li>
+				<li><%= link_to("Zarejestruj", new_user_registration_path) %></li>
+			</div>
+		<% else %>
+			<p>Zalogowany jako <%= current_user.email %></p>
+			<div class="panel">
+				<li><%= link_to("Dodaj ksiazke", "url") %></li>
+				<li><%= link_to("Wyloguj", destroy_user_session_path, method: :delete) %></li>
+			</div>
+		<% end %>
+	</ul>
+</header>
