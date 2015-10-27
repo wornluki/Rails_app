@@ -1,5 +1,10 @@
 <ul>
-	<li><%= link_to("Zaloguj", "url") %></li>
-	<li><%= link_to("Zarejestruj", "url") %></li>
-	<li><%= link_to("Wyloguj", "url") %></li>
+	<% unless user_signed_in? %>
+		<li><%= link_to("Zaloguj", new_user_session_path) %></li>
+		<li><%= link_to("Zarejestruj", new_user_registration_path) %></li>
+	<% else %>
+		Zalogowany jako <%= current_user.email %>
+		<li><%= link_to("Wyloguj", destroy_user_session_path, method: :delete) %></li>
+		<li><%= link_to("Dodaj ksiazke", "url") %></li>
+	<% end %>	
 </ul>
