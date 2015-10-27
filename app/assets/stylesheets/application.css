@@ -479,6 +479,10 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start; }
 
+.wrapper {
+  width: 960px;
+  margin: 0 auto; }
+
 input, textarea {
   padding-bottom: 5px;
   border: none;
@@ -489,10 +493,6 @@ input, textarea {
   input[type=submit], textarea[type=submit] {
     margin: 20px auto;
     border: 0; }
-
-.form-wrap {
-  width: 30%;
-  margin: 0 auto; }
 
 .field {
   display: -webkit-box;
@@ -558,12 +558,10 @@ ul.nav {
   ul.nav li {
     list-style: none;
     padding: 20px; }
-
-a {
-  color: #fff; }
-  a:hover {
+  ul.nav a {
     color: #fff; }
-
-p {
-  padding: 20px;
-  margin: 0; }
+    ul.nav a:hover {
+      color: #fff; }
+  ul.nav p {
+    padding: 20px;
+    margin: 0; }

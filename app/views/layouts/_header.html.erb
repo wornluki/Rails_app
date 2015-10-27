@@ -1,0 +1,17 @@
+<header>
+	<ul class="nav">
+		<p><%= link_to("BOOKSTORE.pl", root_path) %></p>
+		<% unless user_signed_in? %>
+			<div class="panel">
+				<li><%= link_to("Zaloguj", new_user_session_path) %></li>
+				<li><%= link_to("Zarejestruj", new_user_registration_path) %></li>
+			</div>
+		<% else %>
+			<p>Zalogowany jako <%= current_user.email %></p>
+			<div class="panel">
+				<li><%= link_to("Dodaj ksiazke", new_user_book_path(current_user.id)) %></li>
+				<li><%= link_to("Wyloguj", destroy_user_session_path, method: :delete) %></li>
+			</div>
+		<% end %>
+	</ul>
+</header>
