@@ -565,3 +565,11 @@ ul.nav {
   ul.nav p {
     padding: 20px;
     margin: 0; }
+
+.book {
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px #446CB3 solid; }
+  .book li {
+    list-style: none; }

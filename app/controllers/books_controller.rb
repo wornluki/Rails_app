@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: ["show"]
   before_filter :requie_permission
   before_action :find_user
-  before_action :find_book, only: [:show]
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def new
     @book = @user.books.new
@@ -18,6 +18,22 @@ class BooksController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update book_params
+      redirect_to user_book_path(@user, @book), notice: "Książka została zaktualizowana"
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @book.destroy
+    redirect_to root_path
   end
 
   private

@@ -1,0 +1,22 @@
+<h2>Edit episode</h2>
+<%= form_for ([@user, @book]) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="center">
+    <%= f.submit "Edit book", class: "button-blue"  %>
+  </div>
+<% end %>

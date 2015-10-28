@@ -1,0 +1,12 @@
+<div class="flex books">
+  <% @books.each do |book| %>
+    <div class="book">
+      <img src="/images/harry.jpg" alt="" />
+      <h2><%= link_to book.title, user_book_path(book.user_id, book) %></h2>
+      <ul>
+        <li><%= link_to "Edytuj", edit_user_book_path(book.user_id, book) %></li>
+        <li><%= link_to "Usuń", user_book_path(book.user_id, book), method: :delete, data: {confirm: "Jesteś pewien, że chcesz skasować książkę?"}%></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
