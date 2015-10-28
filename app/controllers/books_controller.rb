@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: ["show"]
+  before_filter :requie_permission
   before_action :find_user
   before_action :find_book, only: [:show]
 
@@ -30,5 +32,13 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :description, :author)
+  end
+
+  def requie_permission
+    @user = User.find(params[:user_id])
+    if current_user != @user
+      redirect_to root_path, notice: "Nie możesz zobaczyć tej strony"
+
+    end
   end
 end
