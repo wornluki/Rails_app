@@ -1,7 +1,9 @@
 <div class="flex books">
   <% @books.each do |book| %>
     <div class="book">
-      <img src="/images/harry.jpg" alt="" />
+      <div class="image">
+        <%= image_tag book.thumbnail.url(:medium) %>
+      </div>
       <h2><%= link_to book.title, user_book_path(book.user_id, book) %></h2>
       <ul>
         <li><%= link_to "Edytuj", edit_user_book_path(book.user_id, book) %></li>

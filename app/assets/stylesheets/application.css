@@ -573,3 +573,6 @@ ul.nav {
   border: 1px #446CB3 solid; }
   .book li {
     list-style: none; }
+  .book .image {
+    width: 100%;
+    margin: 0 auto; }

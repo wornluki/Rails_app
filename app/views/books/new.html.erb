@@ -17,6 +17,11 @@
       <%= f.text_area :description %>
     </div>
 
+    <div class="field">
+      <%= f.label :thumbnail %>
+      <%= f.file_field :thumbnail %>
+    </div>
+
     <div class="center">
       <%= f.submit "Create book", class: "button-blue"  %>
     </div>
